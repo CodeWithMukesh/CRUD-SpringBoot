@@ -12,4 +12,4 @@ installation step:
    #6. All the best !!!
 
 Project overview
-![Screenshot (4)](https://user-images.githubusercontent.com/88608361/148179776-f11171a2-15d4-4562-b5fe-d2ce1600f483.png)
+![Crudjava](https://user-images.githubusercontent.com/88608361/148184145-2c99a594-147c-4960-9656-b48ee0d6978e.jpg)
