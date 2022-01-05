@@ -20,9 +20,13 @@
 Project overview
 
 
-**Project Landing Page**
+**Project Landing Page: here you will get all students list**
 ![Crudjava](https://user-images.githubusercontent.com/88608361/148184145-2c99a594-147c-4960-9656-b48ee0d6978e.jpg)
 
-**Add new data**
+**Add new data by clicking Add Student**
 
 ![Screenshot (9)](https://user-images.githubusercontent.com/88608361/148184516-7e250833-3521-47a2-9b69-0a933a769000.png)
+
+**Update Record by clicking Edit Button**
+![Screenshot (11)](https://user-images.githubusercontent.com/88608361/148186174-18e5618c-ede6-420a-8b8c-b6bf11fd3678.png)
+
