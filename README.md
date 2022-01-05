@@ -12,4 +12,8 @@ installation step:
    #6. All the best !!!
 
 Project overview
+**Project Landing Page**
 ![Crudjava](https://user-images.githubusercontent.com/88608361/148184145-2c99a594-147c-4960-9656-b48ee0d6978e.jpg)
+
+**Add new data**
+![Screenshot (9)](https://user-images.githubusercontent.com/88608361/148184516-7e250833-3521-47a2-9b69-0a933a769000.png)
