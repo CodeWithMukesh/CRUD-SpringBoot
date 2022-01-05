@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student management</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.heading{
+		color: white;
+		background:gray;
+		font-size:bold;
+		}
+	</style>
+</head>
+<body>
+<div class="container-fluid mt-2">
+<h1 class="text-center" style="color:orange">Student Management</h1>
+
+<div class="container">
+<a th:href="@{/addNewStudent}"><button class="btn btn-success">ADD STUDENT</button></a>
+<table class="table mt-4">
+  <thead>
+    <tr class="heading">
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">MOBILE</th>
+      <th scope="col">BRANCH</th>    
+      <th scope="col">&nbsp; &nbsp; &nbsp; ACTION </th>
+    </tr>
+  </thead>
+
+  <tbody>    
+    <tr th:each = "students : ${student}">
+      <td th:text="${students.id}"></td>
+      <td th:text="${students.name}"></td>
+      <td th:text="${students.address}"></td>
+      <td th:text="${students.mobile}"></td>
+      <td th:text="${students.branch}"></td>
+      <td>&nbsp; &nbsp; <a th:href="@{/updateStudent/{id}(id=${students.id})}"><button class="btn btn-info">EDIT</button></a> &nbsp;
+      		 <a th:href="@{/deleteStudent/{id}(id=${students.id})}"><button class="btn btn-danger">DELETE</button> </a> 
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

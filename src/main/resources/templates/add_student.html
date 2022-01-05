@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student management</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<style>
+  .wrapper{
+            width: 600px;
+            margin: 0 auto;
+        }
+      .error{
+            color:red;
+            font:bold;
+        }
+</style>
+</head>
+<body>
+<h1 class="text-center mt-3 mb-4" style="color:orange">Student Management</h1>
+<div class="container wrapper">
+<form action="#" th:action="@{/saveStudent}" method="post" th:object="${student}" class="col card p-3 mb-5 myform">
+    <div class="form-group">
+        <label for="firstName">Name</label>
+         <input type="text" name="name" th:field="*{name}"  placeholder="Enter First Name" required 
+               class="form-control"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" name="address" th:field="*{address}" placeholder="address" required 
+               class="form-control"/>
+    </div>
+    
+     <div class="form-group">
+        <label for="mobile">Mobile</label>
+        <input type="text" name="mobile" th:field="*{mobile}" placeholder="Mobile" required 
+               class="form-control"/>
+     </div>
+    
+     <div class="form-group">
+        <label for="branch">Branch</label>
+        <input type="text" name="branch" th:field="*{branch}" placeholder="Branch" required  
+               class="form-control"/><br>
+     </div>
+   
+    <button type="submit" class="btn btn-success" value="Create User">Save</button>
+</form>
+</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+	</script>
+	
+	<!-- jquery cdn link -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
+	<!-- jquery validation plugin cdn link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        jQuery.validator.addMethod("lettersonly", function(value, element) {
+            return this.optional(element) || /^[a-z\s]+$/i.test(value);
+            }, "Only alphabetical characters");
+
+        $(".myform").validate({
+            rules:{
+                name:{
+                    required:true,
+                    lettersonly:true
+                },
+                address:{
+                    required:true,
+                    lettersonly:true
+                },
+                
+                mobile:{
+                    required:true,
+                    digits:true,
+                    maxlength:10,
+                    minlength:10
+                },
+                
+                branch:{
+                	required:true,
+                	lettersonly:true
+                }
+                
+            },
+            messages:{
+                name:{
+                    required:"**this is required field",
+                     lettersonly:"invalid username"
+                },
+
+                address:{
+                    required:"**this is required field",
+                    lettersonly:"invalid entry"
+                },
+
+                mobile:{
+                    required:"**this is required field",
+                    digits:"please enter your correct mobile number",
+                    maxlength:"you entered more than 10 digit",
+                    minlength:"you entered less than 10 digit"
+
+                },
+                
+                branch:{
+                	required:"**this is required field",
+                	lettersonly:"invalid entry"                	
+                }
+                
+            },
+
+            submitHandler: function(form) {
+                 form.submit();
+            }
+           
+        });
+  
+    });
+   
+</script>
+
+</body>
+</html>
